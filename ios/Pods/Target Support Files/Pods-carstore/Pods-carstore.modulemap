@@ -1,0 +1,6 @@
+module Pods_carstore {
+  umbrella header "Pods-carstore-umbrella.h"
+
+  export *
+  module * { export * }
+}
