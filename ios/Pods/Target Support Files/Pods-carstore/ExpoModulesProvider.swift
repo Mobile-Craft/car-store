@@ -7,6 +7,7 @@
 
 import ExpoModulesCore
 import ExpoAsset
+import EXAV
 import EXConstants
 import ExpoFileSystem
 import ExpoFont
@@ -18,6 +19,7 @@ public class ExpoModulesProvider: ModulesProvider {
   public override func getModuleClasses() -> [AnyModule.Type] {
     return [
       AssetModule.self,
+      VideoViewModule.self,
       ConstantsModule.self,
       FileSystemModule.self,
       FontLoaderModule.self,

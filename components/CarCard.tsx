@@ -1,8 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { useEffect, useRef } from 'react';
-import { Pressable, StyleSheet, Text, View, Image, Animated } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { Pressable, StyleSheet, Text, View, Animated, Image } from 'react-native';
 
 
 
@@ -15,7 +14,7 @@ export function CarCard({ car }) {
                     <Text style={styles.title}>
                         {car.title}
                     </Text>
-                    <Text numberOfLines={1} style={styles.details}>
+                    <Text numberOfLines={3} style={styles.details}>
                         {car.text}
                     </Text>
                 </View>
@@ -25,7 +24,10 @@ export function CarCard({ car }) {
                         size={25}
                     />
                 </View>
-                <Animated.Image style={[styles.image]} source={{ uri: car.imageUrl }} />
+                <Image style={[styles.image,
+                    // car.rotate === true ? { transform: [{ scaleX: -1 }] } : {},
+                ]}
+                    source={{ uri: car.imageUrl }} />
             </Pressable>
         </Link>
     );
@@ -54,19 +56,19 @@ export function AnimateCarCard({ car, index }) {
 const styles = StyleSheet.create({
     cardContainer: {
         height: 190,
-        marginTop: 20,
-        marginBottom: 40,
+        marginTop: 10,
+        marginBottom: 60,
         padding: 18,
         borderRadius: 28,
         alignContent: 'center',
         alignItems: 'center',
-        marginHorizontal: 16
-
+        marginHorizontal: 25,
     },
     title: {
         color: 'white',
         fontSize: 20,
-        fontWeight: '500'
+        fontWeight: '500',
+        marginBottom: 10
     },
     details: {
         color: 'white',
@@ -74,10 +76,11 @@ const styles = StyleSheet.create({
         fontWeight: '400'
     },
     image: {
-        width: '80%',
+        width: '105%',
         height: '100%',
-        top: 48,
-        left: 60
+        top: 10,
+        left: 60,
+        transform: [{ scaleX: -1 }]
     },
     circle: {
         backgroundColor: 'white',

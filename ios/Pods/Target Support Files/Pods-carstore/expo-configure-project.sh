@@ -47,4 +47,4 @@ with_node \
   generate-modules-provider  \
   --target "/Users/eldertavarez/Desktop/test/car-store/ios/Pods/Target Support Files/Pods-carstore/ExpoModulesProvider.swift" \
   --platform "apple" \
-  --packages "expo-asset" "expo-constants" "expo-file-system" "expo-font" "expo-keep-awake" "expo-router"
+  --packages "expo-asset" "expo-av" "expo-constants" "expo-file-system" "expo-font" "expo-keep-awake" "expo-router"
